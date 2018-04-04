@@ -18,7 +18,6 @@ export class SignUpComponent implements OnInit {
     console.log('email:',this.user.email);
     console.log('user',this.user.name);
     console.log('password',this.user.password);
-    debugger;
     // this.router.navigate(['sign-in']);  //페이지 이동
   }
 }
