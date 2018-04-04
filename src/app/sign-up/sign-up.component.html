@@ -1,4 +1,4 @@
-<form style="border: 1px solid #E6E6E6; width: 450px;" class="uk-align-center uk-margin-medium-top">
+<form (ngSubmit)="onSubmit()" class="uk-align-center uk-margin-medium-top" >
   <img class="uk-margin-bottom uk-align-center" src="assets/images/logo.png" height="70" width="70" alt="">
   <fieldset class="uk-fieldset">
       <div class="uk-box-shadow-medium uk-padding">
@@ -7,28 +7,21 @@
         <div class="uk-form-label">Name</div>
         <div class="uk-inline uk-width-1-1">
           <span class="uk-form-icon" uk-icon="icon: user"></span>
-          <input class="uk-input" type="text" placeholder="Username">
+          <input class="uk-input" [(ngModel)]=user.name name="name" type="text" placeholder="Username">
         </div>
       </div>
       <div class="uk-margin">
         <div class="uk-form-label">Email</div>
         <div class="uk-inline uk-width-1-1">
           <span class="uk-form-icon" uk-icon="icon: mail"></span>
-          <input class="uk-input" type="email" placeholder="Usermail">
+          <input class="uk-input" [(ngModel)]=user.email name="email" type="email" placeholder="Usermail">
         </div>
       </div>
       <div class="uk-margin">
         <div class="uk-form-label">Password</div>
         <div class="uk-inline uk-width-1-1">
           <span class="uk-form-icon" uk-icon="icon: lock"></span>
-          <input class="uk-input" type="password" placeholder="UserPassword">
-        </div>
-      </div>
-      <div class="uk-margin">
-        <div class="uk-form-label">Re-enter Password</div>
-        <div class="uk-inline uk-width-1-1">
-          <span class="uk-form-icon" uk-icon="icon: check"></span>
-          <input class="uk-input" type="password" placeholder="UserPassword">
+          <input class="uk-input" [(ngModel)]=user.password name="password" type="password" placeholder="UserPassword">
         </div>
       </div>
       <div class="uk-margin uk-text-center">
@@ -39,7 +32,7 @@
         <div class="uk-container">
           <label>
             Already have an account? 
-            <a class="uk-link" href="signin">Sign IN <span uk-icon="icon: triangle-right"></span></a>
+            <a class="uk-link" routerLink="/sign-in">Sign IN <span uk-icon="icon: triangle-right"></span></a>
           </label>
         </div>
       </div>
