@@ -1,4 +1,4 @@
-<form style="border: 1px solid #E6E6E6;" class="uk-width-medium uk-align-center uk-margin-medium-top">
+<form (ngSubmit)="onSubmit()" style="border: 1px solid #E6E6E6;" class="uk-width-medium uk-align-center uk-margin-medium-top">
   <img class="uk-margin-bottom uk-align-center uk-margin-small-top"  src="assets/images/logo.png" height="70" width="70" alt="">
   <fieldset class="uk-fieldset">
       <div class="uk-box-shadow-medium uk-padding">
@@ -7,18 +7,18 @@
         <div class="uk-form-label">Email</div>
         <div class="uk-inline uk-width-1-1">
           <span class="uk-form-icon" uk-icon="icon: mail"></span>
-          <input class="uk-input" type="email" placeholder="Username">
+          <input [(ngModel)]=user.email name="email" class="uk-input" placeholder="Username">
         </div>
       </div>
       <div class="uk-margin">
         <div class="uk-form-label">Password</div>
         <div class="uk-inline uk-width-1-1">
           <span class="uk-form-icon" uk-icon="icon: lock"></span>
-          <input class="uk-input" type="password" placeholder="Password">
+          <input [(ngModel)]=user.password name="password" class="uk-input" type="password" placeholder="Password">
         </div>
       </div>
       <div class="uk-margin uk-text-center">
-        <button routerLink="/board-list" class="uk-button uk-button-default uk-width-1-1">SIGN IN</button>
+        <button class="uk-button uk-button-default uk-width-1-1">SIGN IN</button>
       </div>
     </div>
   </fieldset>
