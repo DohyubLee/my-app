@@ -16,13 +16,18 @@ export class SignInComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  
   onSubmit() {
-    this.http.post(this.url, this.user).subscribe(res => {
-      if (res.status === "login") {
-        this.router.navigate(['board-list']);  //페이지 이동
+    this.http.post(this.url, this.user).map((res: any) => {
+      return res;
+    }).subscribe(
+      res => {
+        alert(res.msg);
+        this.router.navigate(['board-list']);
+      },
+      error => {
+        alert(error.error.msg);
       }
-   })
+    )
   }
-
 }
