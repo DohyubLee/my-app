@@ -1,15 +1,15 @@
-<form style="max-width: 1200px; margin-left: auto; margin-right: auto">
+<form (ngSubmit)="onSubmit()">
   <fieldset class="uk-fieldset uk-margin-large-top uk-margin-large-bottom">
     <legend class="uk-legend">Modify</legend>
     <div class="uk-margin">
-      <input class="uk-input" type="text" placeholder="title">
+      <input [ngModel]="post?.title" (ngModelChange)="post.title=$event" name="title" class="uk-input" type="text">
     </div>
     <div class="uk-margin">
-      <textarea class="uk-textarea" rows="15" placeholder="Textarea"></textarea>
+      <textarea [ngModel]="post?.description" (ngModelChange)="post.description=$event" name="description" class="uk-textarea" rows="15"></textarea>
     </div>
     <div class="uk-align-right">
-      <button class="uk-button uk-button-primary">save</button>
-      <button class="uk-button uk-button-danger" routerLink="/board-detail">cancel</button>
+      <button type="submit" class="uk-button uk-button-primary">save</button>
+      <button class="uk-button uk-button-danger" (click)="goBack()">cancel</button>
     </div>
   </fieldset>
 </form>

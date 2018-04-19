@@ -14,9 +14,9 @@ const routes: Routes = [
   { path: 'sign-in', component: SignInComponent },
   { path: 'sign-up', component: SignUpComponent },
   { path: 'board-list', component: BoardListComponent },
-  { path: 'board-detail', component: BoardDetailComponent },
+  { path: 'board-detail/:id', component: BoardDetailComponent },
   { path: 'board-insert', component: BoardInsertComponent },
-  { path: 'board-edit', component: BoardEditComponent }
+  { path: 'board-edit/:id', component: BoardEditComponent }
 ];
 
 @NgModule({

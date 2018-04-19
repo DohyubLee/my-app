@@ -12,6 +12,7 @@ import { BoardEditComponent } from './board-edit/board-edit.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { AppRoutingModule } from './app-routing.module';
+import { LoginStatusService } from './login-status.service';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,7 @@ import { AppRoutingModule } from './app-routing.module';
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [LoginStatusService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

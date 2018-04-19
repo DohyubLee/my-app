@@ -11,17 +11,12 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>Table Data</td>
+    <tr *ngFor="let post of posts">
+      <td>{{post.saveDate}}</td>
       <td>
-        <a class="uk-link-reset" routerLink="/board-detail">Table Data</a>
+        <a class="uk-link-reset" routerLink="/board-detail/{{post.id}}">{{post.title}}</a>
       </td>
-      <td>Table Data</td>
-    </tr>
-    <tr>
-      <td>Table Data</td>
-      <td>Table Data</td>
-      <td>Table Data</td>
+      <td>{{post.name}}</td>
     </tr>
   </tbody>
 </table>

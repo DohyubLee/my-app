@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { LoginStatusService } from '../login-status.service';
 
 @Component({
   selector: 'app-sign-in',
@@ -12,9 +13,13 @@ export class SignInComponent implements OnInit {
   url = 'http://localhost:3000/login';
   constructor(
     private http: HttpClient,
-    private router: Router) { }
+    private router: Router,
+    private loginStatus: LoginStatusService) { }
 
   ngOnInit() {
+    if (sessionStorage.getItem('id')) {
+      this.router.navigate(['board-list']);
+    }
   }
   
   onSubmit() {
@@ -22,7 +27,9 @@ export class SignInComponent implements OnInit {
       return res;
     }).subscribe(
       res => {
-        alert(res.msg);
+        sessionStorage.setItem('id', res.email);
+        sessionStorage.setItem('num', res.userNum);
+        this.loginStatus.sessionId = sessionStorage.getItem('id')
         this.router.navigate(['board-list']);
       },
       error => {

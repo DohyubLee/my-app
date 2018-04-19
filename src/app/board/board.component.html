@@ -4,10 +4,15 @@
       <img src="assets/images/logo.png" height="70" width="70" alt="">
     </div>
     <div class="uk-width-expand uk-text-right">
-      <a routerLink="/sign-in">Sign in</a>
-      <span>or</span>
-      <a routerLink="/sign-up">Sign up</a>
-    </div>  
+      <div *ngIf="loginStatus.sessionId else noSessionId">
+        <a (click)="signOut()">Sign out</a>
+      </div>
+      <ng-template #noSessionId>
+        <a routerLink="/sign-in">Sign in</a>
+        <span>or</span>
+        <a routerLink="/sign-up">Sign up</a>
+      </ng-template>
+    </div>
   </div>
 </header>
 <router-outlet></router-outlet>

@@ -19,15 +19,6 @@ export class SignUpComponent implements OnInit {
   }
   
   onSubmit() {
-    // this.http.post(this.url, this.user).subscribe(
-    //   res => {
-    //     alert(res.msg);
-    //     this.router.navigate(['sign-in']);
-    //   },
-    //   error => {
-    //     alert(error.error.msg);
-    //   }
-    // )
     this.http.post(this.url, this.user).map((res: any) => {
       return res;
     }).subscribe(
