@@ -13,6 +13,7 @@ import { SignInComponent } from './sign-in/sign-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { AppRoutingModule } from './app-routing.module';
 import { LoginStatusService } from './login-status.service';
+import { UserComponent } from './user/user.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { LoginStatusService } from './login-status.service';
     BoardInsertComponent,
     BoardEditComponent,
     SignInComponent,
-    SignUpComponent
+    SignUpComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,

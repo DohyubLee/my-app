@@ -6,34 +6,34 @@
   <div class="uk-grid-small uk-child-width-auto uk-align-right uk-margin-large-top">
     <div class="uk-margin-large-bottom uk-margin-medium-top">
       <div *ngIf="userCheck">
-          <a uk-icon="trash" class="uk-text-danger"></a>
+          <a uk-icon="trash" class="uk-text-danger" (click)="delete()"></a>
           <a uk-icon="file-edit" class="uk-text-primary" routerLink="/board-edit/{{post?.id}}"></a>
       </div>
     </div>
   </div>
 </article>
-<form style="max-width: 1200px; margin-left: auto; margin-right: auto">
+<form (ngSubmit)="onSubmit()">
   <fieldset class="uk-fieldset">
     <legend class="uk-legend">comment</legend>
     <div class="uk-margin">
-      <textarea class="uk-textarea" rows="5" placeholder="Textarea"></textarea>
+      <textarea [(ngModel)]="comment" name="comment" class="uk-textarea" rows="5" placeholder="Textarea"></textarea>
     </div>
     <div class="uk-align-right">
-      <button class="uk-button uk-button-primary">save</button>
+      <button type="submit" class="uk-button uk-button-primary">save</button>
     </div>
   </fieldset>
 </form>
-<article class="uk-comment uk-comment-primary uk-margin-medium-bottom">
+<article *ngFor="let comment of getComment" class="uk-comment uk-comment-primary uk-margin-small-bottom">
+  <a class="uk-align-right" (click)="commentDelete(comment)" uk-icon="close"></a>
   <header class="uk-comment-header uk-grid-medium uk-flex-middle" uk-grid>
     <div class="uk-width-expand">
-      <h4 class="uk-comment-title uk-margin-remove"><a class="uk-link-reset" href="#">Author</a></h4>
+      <h4 class="uk-comment-title uk-margin-remove"><a class="uk-link-reset" href="#">{{comment.name}}</a></h4>
       <ul class="uk-comment-meta uk-subnav uk-subnav-divider uk-margin-remove-top">
-        <li><a href="#">12 days ago</a></li>
-        <li><a href="#">Reply</a></li>
+        <li><a href="#">{{comment.saveDate}}</a></li>
       </ul>
     </div>
   </header>
   <div class="uk-comment-body">
-    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+    <pre id="comment">{{comment.description}}</pre>
   </div>
 </article>

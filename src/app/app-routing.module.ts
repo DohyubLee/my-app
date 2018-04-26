@@ -8,6 +8,7 @@ import { BoardListComponent } from './board-list/board-list.component';
 import { BoardDetailComponent } from './board-detail/board-detail.component';
 import { BoardInsertComponent } from './board-insert/board-insert.component';
 import { BoardEditComponent } from './board-edit/board-edit.component';
+import { UserComponent } from './user/user.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/board-list', pathMatch: 'full' },
@@ -16,7 +17,8 @@ const routes: Routes = [
   { path: 'board-list', component: BoardListComponent },
   { path: 'board-detail/:id', component: BoardDetailComponent },
   { path: 'board-insert', component: BoardInsertComponent },
-  { path: 'board-edit/:id', component: BoardEditComponent }
+  { path: 'board-edit/:id', component: BoardEditComponent },
+  { path: 'user', component: UserComponent }
 ];
 
 @NgModule({

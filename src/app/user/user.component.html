@@ -1,0 +1,41 @@
+<form (ngSubmit)="onSubmit()" class="uk-align-center uk-margin-medium-top" >
+  <img class="uk-margin-bottom uk-align-center" src="assets/images/logo.png" height="70" width="70" alt="">
+  <fieldset class="uk-fieldset">
+      <div class="uk-box-shadow-medium uk-padding">
+      <legend class="uk-legend">User Info</legend>
+      <div class="uk-margin">
+        <div class="uk-form-label">Name</div>
+        <div class="uk-inline uk-width-1-1">
+          <span class="uk-form-icon" uk-icon="icon: user"></span>
+          <input class="uk-input" [ngModel]=user?.name (ngModelChange)="user.name=$event" name="name" type="text">
+        </div>
+      </div>
+      <div class="uk-margin">
+        <div class="uk-form-label">Email</div>
+        <div class="uk-inline uk-width-1-1">
+          <span uk-icon="icon: mail"></span>
+          <span>{{user?.email}}</span>
+        </div>
+      </div>
+      <div class="uk-margin">
+        <div class="uk-form-label">Password</div>
+        <div class="uk-inline uk-width-1-1">
+          <span class="uk-form-icon" uk-icon="icon: lock"></span>
+          <input class="uk-input" [ngModel]=user?.password (ngModelChange)="user.password=$event" name="password" type="password">
+        </div>
+      </div>
+      <div class="uk-margin uk-text-center">
+        <button type="submit" class="uk-button uk-button-default uk-width-1-1">SAVE</button>
+      </div>
+      <hr class="uk-divider-icon">
+      <div class="uk-margin uk-text-center">
+        <div class="uk-container">
+          <label>
+            <a class="uk-link" routerLink="/board-list">to HOME <span uk-icon="icon: triangle-right"></span></a>
+          </label>
+        </div>
+        <button class="uk-button uk-button-text uk-text-danger" type="button" (click)="delete()">Delete account</button>
+      </div>
+    </div>
+  </fieldset>
+</form>

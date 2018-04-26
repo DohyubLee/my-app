@@ -5,7 +5,12 @@
     </div>
     <div class="uk-width-expand uk-text-right">
       <div *ngIf="loginStatus.sessionId else noSessionId">
-        <a (click)="signOut()">Sign out</a>
+        <p>
+            {{loginStatus.sessionId}}<a routerLink="/user" uk-icon="user"></a>
+        </p>
+        <p>
+            <a (click)="signOut()">Sign out</a>
+        </p>
       </div>
       <ng-template #noSessionId>
         <a routerLink="/sign-in">Sign in</a>

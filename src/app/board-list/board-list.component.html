@@ -11,7 +11,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let post of posts">
+    <tr *ngFor="let post of posts.slice().reverse()">
       <td>{{post.saveDate}}</td>
       <td>
         <a class="uk-link-reset" routerLink="/board-detail/{{post.id}}">{{post.title}}</a>
