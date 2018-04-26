@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 export class BoardComponent implements OnInit {
   
   constructor(
-    private loginStatus: LoginStatusService, 
+    public loginStatus: LoginStatusService, 
     private router: Router
   ) { }
   ngOnInit() {
