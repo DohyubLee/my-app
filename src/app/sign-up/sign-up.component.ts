@@ -10,7 +10,7 @@ import 'rxjs/add/operator/map';
 })
 export class SignUpComponent implements OnInit {
   user: any = {};
-  url: string = 'http://localhost:3000/register';
+  url: string = 'https://ldhboard.ga/register';
   constructor(
     private http: HttpClient, 
     private router: Router) { }

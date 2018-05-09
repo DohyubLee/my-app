@@ -10,7 +10,7 @@ import { LoginStatusService } from '../login-status.service';
 })
 export class SignInComponent implements OnInit {
   user: any = {};
-  url = 'http://localhost:3000/login';
+  url = 'https://ldhboard.ga/login';
   constructor(
     private http: HttpClient,
     private router: Router,

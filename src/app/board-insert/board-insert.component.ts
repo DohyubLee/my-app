@@ -10,7 +10,7 @@ import { LoginStatusService } from '../login-status.service';
 })
 export class BoardInsertComponent implements OnInit {
   posts: any = {};
-  url = 'http://localhost:3000/board-insert';
+  url = 'https://ldhboard.ga/board-insert';
   constructor(
     private loginStatus: LoginStatusService,
     private http: HttpClient,

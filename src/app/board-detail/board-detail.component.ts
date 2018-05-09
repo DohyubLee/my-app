@@ -10,10 +10,10 @@ import * as moment from 'moment';
   styleUrls: ['./board-detail.component.css']
 })
 export class BoardDetailComponent implements OnInit {
-  url1 = 'http://localhost:3000/board-detail';
-  url2 = 'http://localhost:3000/post-delete';
-  url3 = 'http://localhost:3000/comment-insert';
-  url4 = 'http://localhost:3000/comment-delete';
+  url1 = 'https://ldhboard.ga/board-detail';
+  url2 = 'https://ldhboard.ga/post-delete';
+  url3 = 'https://ldhboard.ga/comment-insert';
+  url4 = 'https://ldhboard.ga/comment-delete';
   post: any;
   userCheck: boolean;
   comment: string;

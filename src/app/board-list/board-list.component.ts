@@ -10,7 +10,7 @@ import * as moment from 'moment';
   styleUrls: ['./board-list.component.css']
 })
 export class BoardListComponent implements OnInit {
-  url = 'http://localhost:3000/board-list';
+  url = 'https://ldhboard.ga/board-list';
   posts: Array<PostsList> = [];
   constructor(
     private router: Router,

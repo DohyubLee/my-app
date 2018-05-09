@@ -10,8 +10,8 @@ import { PostEdit } from '../post-edit';
   styleUrls: ['./board-edit.component.css']
 })
 export class BoardEditComponent implements OnInit {
-  url1 = 'http://localhost:3000/board-edit';
-  url2 = 'http://localhost:3000/board-edit-save';
+  url1 = 'https://ldhboard.ga/board-edit';
+  url2 = 'https://ldhboard.ga/board-edit-save';
   post: PostEdit;
   constructor(
     private location: Location,

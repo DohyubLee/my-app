@@ -10,9 +10,9 @@ import { LoginStatusService } from '../login-status.service';
 })
 export class UserComponent implements OnInit {
   user: any = {};
-  url1: string = 'http://localhost:3000/user';
-  url2: string = 'http://localhost:3000/usermodify';
-  url3: string = 'http://localhost:3000/userdelete';
+  url1: string = 'https://ldhboard.ga/user';
+  url2: string = 'https://ldhboard.ga/usermodify';
+  url3: string = 'https://ldhboard.ga/userdelete';
   constructor(
     private http: HttpClient,
     private router: Router,
